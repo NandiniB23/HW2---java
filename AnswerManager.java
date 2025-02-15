@@ -5,9 +5,9 @@ public class AnswerManager {
         Question q = qm.findQuestionById(questionId);
         if (q != null) {
             q.addAnswer(new Answer(answerBody));
-            System.out.println("✅ Answer added successfully!");
+            System.out.println(" Answer added successfully!");
         } else {
-            System.out.println("⚠️ Question not found.");
+            System.out.println("Question not found.");
         }
     }
 
@@ -17,21 +17,21 @@ public class AnswerManager {
             for (Answer a : q.getAnswers()) {
                 if (a.getId() == answerId) {
                     a.setBody(newBody);
-                    System.out.println("✅ Answer updated successfully!");
+                    System.out.println(" Answer updated successfully!");
                     return;
                 }
             }
         }
-        System.out.println("⚠️ Answer not found.");
+        System.out.println("️ Answer not found.");
     }
 
     public void deleteAnswer(QuestionManager qm, int questionId, int answerId) {
         Question q = qm.findQuestionById(questionId);
         if (q != null) {
             q.getAnswers().removeIf(a -> a.getId() == answerId);
-            System.out.println("✅ Answer deleted successfully!");
+            System.out.println(" Answer deleted successfully!");
         } else {
-            System.out.println("⚠️ Question not found.");
+            System.out.println(" Question not found.");
         }
     }
 
@@ -41,11 +41,11 @@ public class AnswerManager {
             for (Answer a : q.getAnswers()) {
                 if (a.getId() == answerId) {
                     a.upvote();
-                    System.out.println("👍 Answer upvoted!");
+                    System.out.println(" Answer upvoted!");
                     return;
                 }
             }
         }
-        System.out.println("⚠️ Answer not found.");
+        System.out.println("️ Answer not found.");
     }
 }
